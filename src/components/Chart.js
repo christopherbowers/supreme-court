@@ -7,6 +7,19 @@ export default function Chart() {
 
   const withVotes = useData()
   const [loading, setLoading] = useState(true)
+  const [currentWidth, setCurrentWidth] = useState(null)
+
+
+  useEffect(() => {
+    const onResize = () => {
+      setCurrentWidth(parseInt(d3.select('#scatter').style('width')))
+    }
+
+    window.addEventListener('resize', onResize)
+
+    return () => window.removeEventListener("resize", onResize)
+  })
+
 
   useEffect(() => {
     const drawChart = () => {
@@ -76,7 +89,7 @@ export default function Chart() {
       drawChart()
     }
 
-  }, [withVotes, loading])
+  }, [withVotes, loading, currentWidth])
 
   return (
     <div className='chart-wrapper'>

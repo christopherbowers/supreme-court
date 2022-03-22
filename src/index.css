@@ -30,7 +30,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* width: 100vw; */
 }
 
 .wrapper {
@@ -157,6 +156,7 @@ button:hover.button {
         margin: 24px;
       }
   }
+
 @media (max-width: 834px) {
 
       .wrapper {
