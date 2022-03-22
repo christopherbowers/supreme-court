@@ -8,14 +8,14 @@ export default function Chart() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    function drawChart() {
+    const drawChart = () => {
       const parseDate = d3.timeParse('%Y')
-      const margin = { top: 10, right: 40, bottom: 50, left: 30 },
-        width = 1200 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom
 
-      // const width = parseInt(d3.select('#scatter').style('width'), 10)
-      // const height = width / 2
+      const currentWidth = parseInt(d3.select('#scatter').style('width'))
+
+      const margin = { top: 10, right: 40, bottom: 30, left: 30 },
+        width = currentWidth - margin.left - margin.right,
+        height = (currentWidth / 2) - margin.top - margin.bottom
 
       d3.selectAll('#scatter > *').remove()
 
@@ -35,10 +35,8 @@ export default function Chart() {
       const svg = d3
         .select('#scatter')
         .append('svg')
-        .attr('width', width)
-        .attr('height', height)
-        // .attr('viewbox', `0 0 ${width} ${height}`)
-        // .attr('preserveAspectRatio','xMinYMin meet')
+        .attr('width', width + margin.left + margin.right)
+        .attr('height', height + margin.top + margin.bottom)
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
@@ -80,14 +78,14 @@ export default function Chart() {
   }, [withVotes, loading])
 
 
-  if (loading) {
-    return <>Loading...</>
-  } else
+  // if (loading) {
+  //   return <div className="loading">Loading...</div>
+  // } else
 
   return (
-    <div className="chart-wrapper">
+    <div className='chart-wrapper'>
       <h2>Data</h2>
-      <div id="scatter" />
+      { loading ? <div className="loading">Loading...</div> : <div id="scatter" /> }
     </div>
   )
 }
