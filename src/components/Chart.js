@@ -10,9 +10,12 @@ export default function Chart() {
   useEffect(() => {
     function drawChart() {
       const parseDate = d3.timeParse('%Y')
-      const margin = { top: -30, right: 40, bottom: 30, left: 30 },
+      const margin = { top: 10, right: 40, bottom: 50, left: 30 },
         width = 1200 - margin.left - margin.right,
         height = 600 - margin.top - margin.bottom
+
+      // const width = parseInt(d3.select('#scatter').style('width'), 10)
+      // const height = width / 2
 
       d3.selectAll('#scatter > *').remove()
 
@@ -34,7 +37,8 @@ export default function Chart() {
         .append('svg')
         .attr('width', width)
         .attr('height', height)
-        .attr('preserveAspectRatio','xMinYMin')
+        // .attr('viewbox', `0 0 ${width} ${height}`)
+        // .attr('preserveAspectRatio','xMinYMin meet')
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 

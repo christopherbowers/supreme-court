@@ -33,12 +33,12 @@ body {
   width: 100vw;
 }
 
-.wrapper {
+/* .wrapper {
   margin: 0 auto;
   max-width: 1200px
-}
+} */
 
-.header-shadow {
+/* .header-shadow {
   position: absolute;
   left: 0%;
   right: 0%;
@@ -117,9 +117,9 @@ a.button {
 
 a:hover.button {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(266.33deg, #2649D8 0%, #494AFF 99.63%);
-}
+} */
 
-.chart-wrapper {
+/* .chart-wrapper {
   padding-bottom: 60px;
 
 }
@@ -127,10 +127,10 @@ a:hover.button {
 .chart-wrapper h2 {
   font-size: 32px;
   font-weight: 700;
-}
+} */
 
 
-@media (max-width: 834px) {
+/* @media (max-width: 834px) {
 
       .wrapper {
         margin: 0 auto;
@@ -169,4 +169,4 @@ a:hover.button {
         display: block;
         width: 166px;
       }
-  }
+  } */

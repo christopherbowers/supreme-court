@@ -4,8 +4,8 @@ export default function App() {
 
   return (
     <div className="wrapper">
-      <Header />
-      <Info />
+      {/* <Header />
+      <Info /> */}
       <Chart />
     </div>
   )
