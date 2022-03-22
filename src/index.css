@@ -79,7 +79,7 @@ header h1 {
 .flex-wrapper img,
 #scatter {
   border-radius: 5px;
-  background: #FFFFFF;
+  /* background: #FFFFFF; */
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
@@ -103,7 +103,7 @@ header h1 {
   padding-bottom: 30px;
 }
 
-a.button {
+button.button {
   font-family: 'DM Sans';
   font-weight: 700;
   font-size: 16px;
@@ -113,10 +113,12 @@ a.button {
   border-radius: 5px;
   padding: 13px 24px;
   text-decoration: none;
+  border: none;
 }
 
-a:hover.button {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(266.33deg, #2649D8 0%, #494AFF 99.63%);
+button:hover.button {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+              linear-gradient(266.33deg, #2649D8 0%, #494AFF 99.63%);
 }
 
 .chart-wrapper {
@@ -146,6 +148,15 @@ a:hover.button {
   animation: fadeIn 1s infinite alternate;
 }
 
+.flex-wrapper > * {
+  transition: all .3s;
+}
+
+@media (min-width: 834px) {
+      #root {
+        margin: 24px;
+      }
+  }
 @media (max-width: 834px) {
 
       .wrapper {
@@ -157,6 +168,7 @@ a:hover.button {
         flex-flow: column nowrap;
         max-width: 714px;
       }
+
       .image img {
         min-width: 714px;
         height: 600px;
@@ -180,9 +192,80 @@ a:hover.button {
         line-height: 23px;
       }
 
-      a.button {
+      button.button {
         margin: 0 auto;
         display: block;
         width: 166px;
+      }
+  }
+
+@media (max-width: 720px) {
+      .header-shadow {
+        display: none;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      .flex-wrapper {
+        margin-top: 0px;
+        position: relative;
+        width: 100vw;
+        min-width: 100vw;
+        min-height: 100px;
+        max-height: 440px;
+        padding: 0;
+      }
+
+      .flex-wrapper h2 {
+        margin-bottom: 18px;
+      }
+
+      .text {
+        position: absolute;
+        top: 30%;
+        bottom: 0;
+        left:0;
+        right:0;
+        margin: auto;
+        padding: 0;
+      }
+
+      .flex-wrapper div:nth-of-type(2) {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .text h2 {
+        text-align: center;
+        font-size: 28px;
+        line-height: 36.46px;
+        color: #ffffff;
+        padding: 0 12px 24px 0;
+        margin: 0;
+      }
+
+      .text p {
+        display: none;
+      }
+
+      .image::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: hsla(0, 0%, 0%, 0.3);
+      }
+
+
+      .image img {
+        width: 100vw;
+        min-width: 100vw;
+        min-height: 100px;
+        max-height: 440px;
+        object-fit: cover;
       }
   }
