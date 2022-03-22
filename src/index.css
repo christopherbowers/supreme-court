@@ -128,6 +128,7 @@ a:hover.button {
   font-weight: 700;
 }
 
+
 .loading {
   height: clamp(240px, 600px, 600px);
   padding: 24px;
@@ -135,6 +136,14 @@ a:hover.button {
   background: #FFFFFF;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+}
+
+.blink {
+  animation: fadeIn 1s infinite alternate;
 }
 
 @media (max-width: 834px) {

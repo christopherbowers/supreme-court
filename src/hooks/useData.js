@@ -22,9 +22,16 @@ export default function useData() {
           setCases(Object.values(res.data))
         })
       }
-      getJustices()
-      getCases()
-    }, [])
+
+      if (!justices.length) {
+        getJustices()
+      }
+
+      if (justices) {
+        getCases()
+      }
+
+    }, [justices])
 
     useEffect(() => {
       // Get decision dates and make a new array with only decision dates

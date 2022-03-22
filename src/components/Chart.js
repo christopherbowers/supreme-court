@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import * as d3 from 'd3'
 import useData from '../hooks/useData'
+import { Loading } from './'
 
 export default function Chart() {
 
@@ -77,15 +78,10 @@ export default function Chart() {
 
   }, [withVotes, loading])
 
-
-  // if (loading) {
-  //   return <div className="loading">Loading...</div>
-  // } else
-
   return (
     <div className='chart-wrapper'>
       <h2>Data</h2>
-      { loading ? <div className="loading">Loading...</div> : <div id="scatter" /> }
+      { loading ? <Loading /> : <div id="scatter" /> }
     </div>
   )
 }
